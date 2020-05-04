@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\ui_kit\\header_elements\\company_icon\\_logotype.scss"],"names":[],"mappings":"AAAA;EACI;EACA;;;AAGJ;EACI","file":"landing_page.f189f1c5.css","sourceRoot":"..\\src\\landing_page","sourcesContent":[".company_icon{\r\n    width: 40px;\r\n    margin-right: 12.5px;\r\n}\r\n\r\n.company_name{\r\n    width: 53.19px;\r\n}"]}
