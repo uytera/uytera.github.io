@@ -117,26 +117,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"ui_kit/input_fields/two_places/two_places_button.js":[function(require,module,exports) {
+})({"ui_kit/buttons/light/button-light.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var massOfTwoButtons = document.getElementsByClassName('two-places-expand-elemet');
-  var angleTwoButtons = 0;
+  var light_buttons = document.getElementsByClassName('button-light');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = massOfTwoButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      item.addEventListener("click", function (e) {
-        angleTwoButtons += 180;
-        $('.two-places-expand-elemet').each(function (e) {
-          $(this).css({
-            transition: 'transform 0.5s',
-            transform: 'rotate(' + angleTwoButtons + 'deg)'
-          });
-        });
+    var _loop = function _loop() {
+      var light_b = _step.value;
+      light_b.addEventListener("mousedown", function (e) {
+        light_b.classList.add("button-light-clicked");
       });
+      light_b.addEventListener("mouseup", function (e) {
+        light_b.classList.remove("button-light-clicked");
+      });
+      light_b.addEventListener("mouseout", function (e) {
+        light_b.classList.remove("button-light-clicked");
+      });
+    };
+
+    for (var _iterator = light_buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      _loop();
     }
   } catch (err) {
     _didIteratorError = true;
@@ -357,5 +360,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/input_fields/two_places/two_places_button.js"], null)
-//# sourceMappingURL=/two_places_button.e0132c73.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/buttons/light/button-light.js"], null)
+//# sourceMappingURL=/button-light.16345a69.js.map

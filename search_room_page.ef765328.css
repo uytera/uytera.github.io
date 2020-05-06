@@ -498,6 +498,24 @@ a.ui-button:active,
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/Quicksand-Light.5a4d01d3.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/Quicksand-Regular.c4be7c39.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/Quicksand-Bold.1194287e.ttf') format('truetype');
+    font-weight: 700;
+    font-style: bold;
+}
 .logo {
   display: flex;
   align-items: center;
@@ -522,7 +540,7 @@ a.ui-button:active,
   padding: 0px 20px;
 }
 .button-filled div {
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -535,6 +553,10 @@ a.ui-button:active,
   width: 44px;
   height: 44px;
   line-height: 44px;
+}
+
+.button-filled-clicked {
+  opacity: 0.5;
 }
 
 .button-light {
@@ -550,6 +572,7 @@ a.ui-button:active,
   padding: 0px 20px;
 }
 .button-light div {
+  -webkit-user-select: none;
   margin: auto 0px;
   align-items: center;
 }
@@ -564,6 +587,10 @@ a.ui-button:active,
   content: "";
   z-index: -1;
   border-radius: 22px;
+}
+
+.button-light-clicked::after {
+  opacity: 0.5;
 }
 
 .drop-down-element {
@@ -610,6 +637,7 @@ body {
   font-family: Montserrat;
 }
 [class$=__header-reg-content] .header-content__company-icons {
+  cursor: pointer;
   margin-left: 140px;
   margin-right: auto;
 }
@@ -776,6 +804,9 @@ body {
   margin-left: 15px;
   margin-right: auto;
 }
+.footer-main-content .footer-main-content__element-subscribe .email-submit-field #email-input::-webkit-input-placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
 .footer-main-content .footer-main-content__element-subscribe .email-submit-field .image-select-label__cancel {
   background: none;
   border: none;
@@ -927,7 +958,7 @@ body {
   transform: rotate(-90deg);
   top: 0;
   bottom: 0;
-  right: 0px;
+  right: 10px;
   margin: auto;
 }
 [class^=room-] .room__slider .material-icons {
@@ -952,19 +983,19 @@ body {
   padding-inline-start: 0px;
   list-style-type: none;
   position: absolute;
-  width: 47px;
-  height: 7.5px;
-  bottom: 20px;
+  width: 41px;
+  height: 7px;
+  bottom: 22px;
   right: 15px;
 }
 [class^=room-] .room__slider .slider__legend .legend__el {
-  margin-right: 3.75px;
+  margin-right: 4px;
   text-align: center;
   display: inline-block;
   border: 1px solid #FFFFFF;
   border-radius: 50%;
-  width: 6.5px;
-  height: 6.49px;
+  width: 5px;
+  height: 5px;
 }
 [class^=room-] .room__slider .slider__legend :first-child {
   background: white;
@@ -973,6 +1004,7 @@ body {
   margin-right: 0px;
 }
 [class^=room-] .room__description-container {
+  cursor: pointer;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -981,6 +1013,7 @@ body {
 [class^=room-] .room__description-container .room__up-container {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   margin-left: 7.4%;
   margin-right: 7.4%;
   padding-bottom: 3.7%;
@@ -990,29 +1023,41 @@ body {
   margin-right: auto;
 }
 [class^=room-] .room__description-container .room__up-container .up-container__type :first-child {
-  font-family: Open Sans;
+  font-family: Quicksand;
   margin-right: 5px;
   color: #1F2041;
   font-weight: bold;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 24px;
+}
+[class^=room-] .room__description-container .room__up-container .up-container__type :nth-child(2) {
+  font-family: Quicksand;
+  margin-right: 6px;
+  color: #1F2041;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
 }
 [class^=room-] .room__description-container .room__up-container .up-container__type :last-child {
-  line-height: 17px;
+  line-height: 15px;
   font-weight: bold;
   font-size: 12px;
   color: #BC9CFF;
 }
+[class^=room-] .room__description-container .room__up-container .up-container__price {
+  display: flex;
+  align-items: flex-end;
+}
 [class^=room-] .room__description-container .room__up-container .up-container__price :first-child {
-  line-height: 18px;
+  line-height: 24px;
   margin-right: 5px;
   color: rgba(31, 32, 65, 0.5);
   font-weight: bold;
   font-size: 14px;
 }
 [class^=room-] .room__description-container .room__up-container .up-container__price :last-child {
-  line-height: 18px;
-  font-size: 14px;
+  line-height: 23px;
+  font-size: 12px;
   color: rgba(31, 32, 65, 0.5);
 }
 [class^=room-] .room__description-container .room__down-container {
@@ -1039,6 +1084,13 @@ body {
   font-size: 14px;
   line-height: 18px;
 }
+[class^=room-] .room__description-container .room__down-container .down-container__rewiews :last-child {
+  font-weight: normal;
+}
+
+.clicked-btn {
+  opacity: 0.5;
+}
 
 .calendar {
   background: #FFFFFF;
@@ -1063,6 +1115,7 @@ body {
   line-height: 24px;
 }
 .calendar .calendar__selector .material-icons.calendar-arrow {
+  cursor: pointer;
   width: 44px;
   text-align: center;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1165,7 +1218,7 @@ body {
 }
 .calendar .clear-accept-buttons .clean-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -1174,12 +1227,15 @@ body {
 }
 .calendar .clear-accept-buttons .save-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   color: #BC9CFF;
+}
+.calendar .clear-accept-clicked {
+  opacity: 0.5;
 }
 .calendar .calendar__down-buttons {
   margin-top: 20px;
@@ -1211,7 +1267,7 @@ body {
 }
 .list-of-counted-items .clear-accept-buttons .clean-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -1220,12 +1276,15 @@ body {
 }
 .list-of-counted-items .clear-accept-buttons .save-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   color: #BC9CFF;
+}
+.list-of-counted-items .clear-accept-clicked {
+  opacity: 0.5;
 }
 .list-of-counted-items .list-of-counted-items__item {
   margin-top: 7px;

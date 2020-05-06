@@ -150,12 +150,32 @@ function day_resize() {
 $(document).ready(function () {
   fill_calendar(currDate);
   add_elements_event();
-  document.getElementById('calendar-forward-btn').addEventListener("click", function (e) {
+  forward = document.getElementById('calendar-forward-btn');
+  backward = document.getElementById('calendar-backward-btn');
+  forward.addEventListener("mousedown", function (e) {
+    forward.classList.add("clicked-btn");
+  });
+  forward.addEventListener("mouseup", function (e) {
+    forward.classList.remove("clicked-btn");
+  });
+  forward.addEventListener("mouseout", function (e) {
+    forward.classList.remove("clicked-btn");
+  });
+  forward.addEventListener("click", function (e) {
     currDate.setMonth(currDate.getMonth() + 1);
     fill_calendar(currDate);
     add_elements_event();
   });
-  document.getElementById('calendar-backward-btn').addEventListener("click", function (e) {
+  backward.addEventListener("mousedown", function (e) {
+    backward.classList.add("clicked-btn");
+  });
+  backward.addEventListener("mouseup", function (e) {
+    backward.classList.remove("clicked-btn");
+  });
+  backward.addEventListener("mouseout", function (e) {
+    backward.classList.remove("clicked-btn");
+  });
+  backward.addEventListener("click", function (e) {
     currDate.setMonth(currDate.getMonth() - 1);
     fill_calendar(currDate);
     add_elements_event();
@@ -351,7 +371,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54238" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57357" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

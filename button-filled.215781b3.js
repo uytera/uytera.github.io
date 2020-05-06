@@ -117,26 +117,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"ui_kit/input_fields/two_places/two_places_button.js":[function(require,module,exports) {
+})({"ui_kit/buttons/filled/button-filled.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var massOfTwoButtons = document.getElementsByClassName('two-places-expand-elemet');
-  var angleTwoButtons = 0;
+  var filled_buttons = document.getElementsByClassName('button-filled');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = massOfTwoButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      item.addEventListener("click", function (e) {
-        angleTwoButtons += 180;
-        $('.two-places-expand-elemet').each(function (e) {
-          $(this).css({
-            transition: 'transform 0.5s',
-            transform: 'rotate(' + angleTwoButtons + 'deg)'
-          });
-        });
+    var _loop = function _loop() {
+      var filled_b = _step.value;
+      filled_b.addEventListener("mousedown", function (e) {
+        filled_b.classList.add("button-filled-clicked");
       });
+      filled_b.addEventListener("mouseup", function (e) {
+        filled_b.classList.remove("button-filled-clicked");
+      });
+      filled_b.addEventListener("mouseout", function (e) {
+        filled_b.classList.remove("button-filled-clicked");
+      });
+    };
+
+    for (var _iterator = filled_buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      _loop();
     }
   } catch (err) {
     _didIteratorError = true;
@@ -357,5 +360,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/input_fields/two_places/two_places_button.js"], null)
-//# sourceMappingURL=/two_places_button.e0132c73.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/buttons/filled/button-filled.js"], null)
+//# sourceMappingURL=/button-filled.215781b3.js.map
