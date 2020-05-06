@@ -1,8 +1,0 @@
-<svg viewbox="0 0 10 10">
-    <defs>
-      <circle id="circle" cx="50%" cy="50%" r="4" stroke-width="0.5" fill="transparent" />
-    </defs>
-    <use xlink:href="#circle" stroke="#92d1c0" stroke-dasharray="12.566" stroke-dashoffset="6.283"/>
-    <use xlink:href="#circle" stroke="#de3c4b" stroke-dasharray="12.566" stroke-dashoffset="-6.283" />
-    <text x="2.2" y="5.7">87 000</text> 
-  </svg>
